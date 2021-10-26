@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<form action="/login/" method="post">
+    <h1>BRUH!!</h1>
+    {% csrf_token %}
+    <label for="choice">Phone Number or Aadhar Number:</label>
+    <table id="choice">
+        <tr>{{ form.as_table }}</tr>
+
+    </table>
+
+    <label for="user_input">Phone Number or Aadhar Number: </label>
+    <input id="user_input" type="text" name="user_input" value="">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>
