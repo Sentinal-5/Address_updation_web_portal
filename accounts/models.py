@@ -11,3 +11,4 @@ class Users(models.Model):
             return self.aadhar_num
         else:
             return self.ph_number
+
