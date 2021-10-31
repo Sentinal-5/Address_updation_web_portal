@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+           <style>
+
+
+     a:link, a:visited {
+ border:none;
+            outline:none;
+            padding:15px;
+            margin-top:100px;
+            border-radius: 4px;
+            color:#eee;
+            font-size: 18px;
+            cursor: pointer;
+            background:#222;
+}
+
+.banner-area{
+            width:100%;
+            height:100vh;
+            background-image: url(/static/a.png);
+            background-size:cover;
+        }
+
+
+.center {
+  text-align: center;
+}
+
+  .content-area{
+            height:100%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+a:hover, a:active {
+  background-color: white;
+  color:#000000
+}
+
+        .container {
+            width: 70%;
+            margin: 50px auto;
+            padding: 10px;
+}
+
+.container .box {
+            width: 100%;
+            padding: 50px;
+            background: #fff;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+        }
+
+
+body {
+  background-image: url('https://i.ibb.co/tJNdCHy/Web-1920-1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #000000;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+   </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%load static%}
+    <title>Login</title>
+  </head>
+  <body>
+   {% if messages%}
+   {%for message in messages%}
+<div class="container mt-3 message alert alert-{{message.tags}} text-center">{{message}}</div>
+   {%endfor%}
+   {%endif%}
+
+      <div class="center">
+       <h3 class="p-3 text-center">Login</h3>
+       <form method="POST" class="px-5 pt-4" novalidate> {% csrf_token%}
+<label>Aadhar Number</label><br>
+<input type="text" name="username"> 
+<br><br>
+<label>password</label><br>
+<input type="password" name="password">
+         <br><br>
+<button class="button" name="registration">Login</button>
+       </form>
+       <br>
+          </div>
+
+  </body>
+</html>

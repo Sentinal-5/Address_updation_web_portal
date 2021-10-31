@@ -1,0 +1,144 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <style>
+
+
+     a:link, a:visited {
+ border:none;
+            outline:none;
+            padding:15px;
+            margin-top:100px;
+            border-radius: 4px;
+            color:#eee;
+            font-size: 18px;
+            cursor: pointer;
+            background:#222;
+}
+
+.banner-area{
+            width:100%;
+            height:100vh;
+            background-image: url(/static/a.png);
+            background-size:cover;
+        }
+
+
+.center {
+  text-align: center;
+}
+
+  .content-area{
+            height:100%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+a:hover, a:active {
+  background-color: white;
+  color:#000000
+}
+
+        .container {
+            width: 70%;
+            margin: 50px auto;
+            padding: 10px;
+}
+
+.container .box {
+            width: 100%;
+            padding: 50px;
+            background: #fff;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+        }
+
+
+body {
+  background-image: url('https://i.ibb.co/tJNdCHy/Web-1920-1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+   </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+       {%load static%}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Home</title>
+  </head>
+  <body>
+
+   {% if messages%}
+   {%for message in messages%}
+<div class="container mt-3 message alert alert-{{message.tags}} text-center">{{message}}</div>
+   {%endfor%}
+   {%endif%}
+<div class="container mt-5">
+    {% if user.is_authenticated%}
+    {% if user.profile.email_verified %}
+{%else%}
+</form>
+</div>
+    {%endif%}
+    <h3>{{user}}</h3>
+   <div class="content">
+   <a href="/logout/" class="btn logout-btn" >Logout</a>
+
+   </div>
+   </div>
+  {%else%}
+<div class="banner-area">
+       <div class="content-area">
+       <div class="center">
+           <h1>Easy Aadhar </h1>
+           <p>Address Updation</p>
+<br>
+    <a href="/login/" class="btn">login</a>
+
+
+
+
+</div>
+       </div>
+</div>
+
+   <div class="container">
+       <div class="box">
+           <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+           </p>
+       </div>
+
+       <div class="box">
+           <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+           </p>
+       </div>
+
+       <div class="box">
+           <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+           </p>
+       </div>
+
+       <div class="box">
+           <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tenetur odio illo, ullam inventore nihil dicta! Repellat quas hic voluptas officiis laborum commodi, minima maiores dolorem tempora voluptatibus, repudiandae quibusdam?
+           </p>
+       </div>
+   </div>
+
+   {%endif%}
+  </body>
+</html>
