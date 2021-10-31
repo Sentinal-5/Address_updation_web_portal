@@ -21,3 +21,4 @@ class activeuser(models.Model):
     user = models.CharField(max_length=17, validators=[phone_regex], unique=True)
     phone_number = models.CharField(max_length=17, unique=True)
     address = models.CharField(max_length=200, unique=True)
+    otp = models.CharField(max_length=4, unique=True)

@@ -24,6 +24,7 @@ def send_otp(number, message):
 
 
 def userLogin(request):
+    activeuser.objects.all().delete()
     try:
         if request.session.get('failed') > 2:
             return HttpResponse('<h1> You have to wait for 5 minutes to login again</h1>')

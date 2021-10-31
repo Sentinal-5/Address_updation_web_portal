@@ -42,6 +42,7 @@ def tenant_view(request):
         message = f'Your OTP for address access - XXXXXXXX{pn} is {otp}'
         send_otp(landlord_num, message)
 
+
         return redirect('login/tenant/confirmation')
 
 def confirm_view(request):

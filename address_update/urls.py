@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.urls import path,include
 from accounts import views
-
+from tenant.views import tenant_view
+from login.views import userLogin
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('login', login_view),
-    path('tenant', tenant_view),
-    path('landlord', landlord_view),
+    path('', userLogin)
 ]
 
