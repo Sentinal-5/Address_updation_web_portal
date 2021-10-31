@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Address_update.landlord.views import landlord_view
+from Address_update.tenant.views import tenant_view
+from Address_update.login.views import login_view
 from Address_update.accounts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login', views.home_view)
+    path('login', login_view),
+    path('tenant', tenant_view),
+    path('landlord', landlord_view),
 ]
+

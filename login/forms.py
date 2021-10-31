@@ -1,10 +1,10 @@
 from django import forms
-
-choice = ['ADHAAR NUMBER', 'MOBILE NUMBER']
+from .models import Users, phone_regex
 
 
 class LoginForm(forms.Form):
-    inp = forms.IntegerField(
-        max_value=12,
-        label="user_input",
-        widget=forms.Select(choices=choice))
+    phone_number = forms.CharField(max_length=17, validators=[phone_regex])
+
+    class Meta:
+        model = Users
+        fields = ['phone_number']
